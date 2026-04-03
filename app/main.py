@@ -3,6 +3,7 @@ from typing import Callable, Any
 
 def cache(func: Callable) -> Any:
     storage_of_data = {}
+
     def wrapper(*args, **kwargs) -> Any:
         key = (args, tuple(sorted(kwargs.items())))
         if key in storage_of_data:
